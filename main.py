@@ -1,12 +1,5 @@
-#Operações Matemáticas 
-def soma(a, b):
-    return a + b
-def subt(a,b):
-    return a - b
-def div(a,b):
-    return a / b
-def multip(a,b):
-    return a * b
+import selecaoOpcao
+import operacaoMat
 
 #Validação de entrada de dados
 def valida_numero(numero):
@@ -37,22 +30,9 @@ while not op_valida:  # Enquanto a operação não for válida, continua pedindo
 numero1 = valida_numero("Digite o primeiro número: ")
 numero2 = valida_numero("Digite o segundo número: ")
 
+ # Chamando a função `opcao` do módulo `selecaoOpcao`
+selecaoOpcao.opcao(i, numero1, numero2)
 
-#Validação de Opção
-if i == "soma":
-    resultado = soma(numero1, numero2)
-    print(f"Resultado da soma: {resultado}")
-elif i == 'subt':
-    resultado = subt(numero1, numero2)
-    print(f'Resultado da subtração: {resultado}')
-elif i == 'subt':
-    resultado = subt(numero1, numero2)
-    print(f'Resultado da subtração: {resultado}')
-elif i == 'subt':
-    resultado = subt(numero1, numero2)
-    print(f'Resultado da subtração: {resultado}')
-
-    
 
 
    
