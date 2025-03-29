@@ -1,19 +1,17 @@
 import operacaoMat
 
 # Opção e cálculo
-def opcao (i, numero1, numero2):
-    if i == "soma":
-        resultado = operacaoMat.soma(numero1, numero2)
-        print(f"Resultado da soma: {resultado}")
-    elif i == "subt":
-        resultado = operacaoMat.subt(numero1, numero2)
-        print(f"Resultado da subtração: {resultado}")
-    elif i == "multip":
-        resultado = operacaoMat.multip(numero1, numero2)
-        print(f"Resultado da multiplicação: {resultado}")
-    elif i == "div":
-        if numero2 == 0:
-            print("Erro! Divisão por zero não é permitida.")
-        else:
-            resultado = operacaoMat.div(numero1, numero2)
-        print(f"Resultado da divisão: {resultado}")
+def opcao(operacao, num1, num2):
+    if operacao == "soma":
+        resultado = num1 + num2
+    elif operacao == "subt":
+        resultado = num1 - num2
+    elif operacao == "div":
+        resultado = num1 / num2
+    elif operacao == "multip":
+        resultado = num1 * num2
+    else:
+        print("Operação inválida!")
+        return
+
+    print(f"O resultado da operação {operacao} é: {resultado}")

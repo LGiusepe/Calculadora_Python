@@ -1,38 +1,24 @@
 import selecaoOpcao
-import operacaoMat
+import validacaoEntrada
 
-#Validação de entrada de dados
-def valida_numero(numero):
-    while True:
-        try:
-            return float(input(numero))
-        except ValueError: #caso ocorra erro de valor, loop continua solicitando a entrada de dados
-            print("Entrada inválida! Digite um número válido.")
-
-
-#Apresentação
-print('Bem Vindo a minha calculadora python')
-print('Vamos selecionar a opção desejada!!')
+# Apresentação
+print('Bem-vindo à minha calculadora Python!')
+print('Vamos selecionar a opção desejada!')
 
 op_valida = False  # Variável de controle do loop
 
-while not op_valida:  # Enquanto a operação não for válida, continua pedindo
-    i = input("Escolha seu método de operação (soma, subt, div, multip): ").strip().lower()
+while not op_valida: # Enquanto a operação não for válida, continua pedindo
+    operacao = input("Escolha seu método de operação (soma, subt, div, multip): ").strip().lower()
     
-     # Lista de operações válidas
-    operacoes_validas = ["soma", "subt", "div", "multip"]
-
-    if i in operacoes_validas:
-        op_valida = True  # Sai do loop
+    # Lista de operações válidas
+    if operacao in ["soma", "subt", "div", "multip"]:
+        op_valida = True # Sai do loop
     else:
         print("Operação inválida. Tente novamente.")
 
-numero1 = valida_numero("Digite o primeiro número: ")
-numero2 = valida_numero("Digite o segundo número: ")
+# Solicitação de números
+numero1 = validacaoEntrada.valida_numero("Digite o primeiro número: ")
+numero2 = validacaoEntrada.validaDiv(operacao)
 
- # Chamando a função `opcao` do módulo `selecaoOpcao`
-selecaoOpcao.opcao(i, numero1, numero2)
-
-
-
-   
+# Chama a função que executa a operação
+selecaoOpcao.opcao(operacao, numero1, numero2)
